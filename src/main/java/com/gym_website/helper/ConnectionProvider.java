@@ -7,7 +7,16 @@ import java.sql.SQLException;
 public class ConnectionProvider {
 
     private static final String URL =
-            "jdbc:mysql://localhost:3306/gym_website?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+            String host = System.getenv("DB_HOST");
+String port = System.getenv("DB_PORT");
+String db   = System.getenv("DB_NAME");
+String user = System.getenv("DB_USER");
+String pass = System.getenv("DB_PASSWORD");
+
+String url = "jdbc:mysql://" + host + ":" + port + "/" + db +
+             "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+
+Connection con = DriverManager.getConnection(url, user, pass);
 
     private static final String USER = "gymuser";   // ✅ change to new DB user
     private static final String PASSWORD = "gym123"; // ✅ change to new DB password
