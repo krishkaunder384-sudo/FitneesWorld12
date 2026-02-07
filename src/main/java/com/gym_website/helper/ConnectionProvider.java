@@ -13,10 +13,8 @@ public class ConnectionProvider {
         try {
             if (connection == null || connection.isClosed()) {
 
-                // Load MySQL driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                // Get Railway environment variables
                 String host = System.getenv("DB_HOST");
                 String port = System.getenv("DB_PORT");
                 String db   = System.getenv("DB_NAME");
@@ -28,7 +26,7 @@ public class ConnectionProvider {
 
                 connection = DriverManager.getConnection(url, user, pass);
 
-                System.out.println("✅ Database Connected Successfully");
+                System.out.println("✅ Railway Database Connected Successfully");
             }
 
         } catch (Exception e) {
