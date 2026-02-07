@@ -1,0 +1,304 @@
+/* ===================== RESET & BASE ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ===================== FORM ELEMENTS ===================== */
+input, textarea, button {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e05757;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===================== NAVBAR (FitnessWorld) ===================== */
+#fwNavbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+/* Navbar on scroll */
+#fwNavbar.scrolled {
+    background-color: #000 !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    animation: slideDown 0.4s ease;
+}
+
+/* Slide animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Red underline hover */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===================== CARDS ===================== */
+.card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ===================== FILE INPUT ===================== */
+.file-input-wrapper {
+    position: relative;
+    width: 80%;
+    margin: 1rem auto 1.5rem;
+}
+
+.file-input-wrapper input[type="file"] {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.file-input-wrapper label {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.photo-preview {
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+.photo-preview img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+/* ===================== GRID ===================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* ===================== GYM HEADER ===================== */
+#gymHeader {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    overflow: hidden;
+}
+
+#gymHeader::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#gymHeader h1,
+#gymHeader p {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================== PAGE HEADER ===================== */
+header {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===================== SCROLLABLE CARDS ===================== */
+.scrollable-cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+}
+
+.scrollable-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrollable-cards::-webkit-scrollbar-thumb {
+    background-color: #ff6b6b;
+    border-radius: 10px;
+}
+
+/* ===================== OWNER ===================== */
+.owner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================== REGISTER / PAYMENT ===================== */
+.register-form,
+.payment {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    animation: popUp 0.5s ease-in-out;
+}
+
+@keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e05757;
+}
+
+
+.navbar {
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+}
+
+.navbar-brand span {
+    color: #ff2e2e;
+}
+
+.nav-link {
+    color: #ddd !important;
+    margin: 0 8px;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #ff2e2e !important;
+}
+
+.nav-btn {
+    border-radius: 20px;
+    padding: 6px 16px;
+}
+

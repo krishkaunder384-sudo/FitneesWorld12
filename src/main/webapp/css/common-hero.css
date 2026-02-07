@@ -1,0 +1,65 @@
+/* ===== COMMON HERO SECTION ===== */
+.hero-section {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 650px;
+    padding: 60px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.hero-content h1 span {
+    color: #ff2e2e;
+}
+
+.hero-content p {
+    margin-top: 15px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.hero-btn-primary {
+    background: #ff2e2e;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.hero-btn-outline {
+    border: 1px solid #fff;
+    background: transparent;
+    padding: 12px 28px;
+    border-radius: 30px;
+    color: #fff;
+    margin-left: 12px;
+}
+
+.hero-btn-outline:hover {
+    background: #fff;
+    color: #000;
+}

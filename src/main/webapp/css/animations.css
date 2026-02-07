@@ -1,0 +1,46 @@
+/* ================= GLOBAL ANIMATIONS ================= */
+
+/* Fade up on scroll */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card hover lift */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Button micro interaction */
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Dashboard stat cards */
+.stat-card {
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease;
+}
